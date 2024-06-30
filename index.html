@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia Game</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            text-align: center; 
+            margin-top: 50px; 
+            background-color: white; 
+            color: blue; 
+        }
+        .hidden { display: none; }
+        .question { 
+            margin-bottom: 20px; 
+            color: black; 
+        }
+        #choices {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        button { 
+            background-color: blue; 
+            color: white; 
+            border: none; 
+            padding: 10px 20px; 
+            font-size: 16px; 
+            cursor: pointer; 
+            margin: 5px;
+            width: 200px;
+        }
+        button:hover { 
+            background-color: red; 
+        }
+        #next-button {
+            background-color: black;
+            color: white;
+            margin-top: 20px;
+        }
+        #next-button:hover {
+            background-color: red;
+        }
+        .selected {
+            background-color: red;
+        }
+        #subtitle {
+            font-size: 14px;
+            margin-top: -20px;
+            margin-bottom: 40px;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="start-screen">
+        <h1>Las dudas del Tío Goluá</h1>
+        <p id="subtitle">El Tío Goluá ya está viejo y pierde la memoria. ¡Refrescale las neuronas contestando estas preguntas!</p>
+        <button id="start-button">Comenzar</button>
+    </div>
+    <div id="game-screen" class="hidden">
+        <div id="question-container">
+            <div class="question" id="question"></div>
+            <div id="choices"></div>
+        </div>
+        <button id="next-button" class="hidden">Siguiente</button>
+    </div>
+    <div id="end-screen" class="hidden">
+        <h1>Juego Terminado</h1>
+        <p id="final-score"></p>
+        <button id="restart-button">Reiniciar</button>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
