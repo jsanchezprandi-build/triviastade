@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
         { question: "¿Qué le regaló Darío a Gonchi en el primer elefante blanco?", choices: ["Una sunga", "Dos sungas", "Tres sungas", "Cuatro sungas"], answer: "Una sunga" },
         { question: "¿Cuántos títulos consiguió el Stade?", choices: ["Muchos", "Bastantes", "Pocos", "Suficientes"], answer: "Suficientes" },
         { question: "¿Cuál fue la peor derrota del Stade?", choices: ["150 contra Pucarú", "89 contra Sudáfrica", "89 contra Christian", "196 contra Bella Vista"], answer: "150 contra Pucarú" },
-        { question: "¿Cuál era el equipo titular del Stade en 2003?", choices: ["Todos salvo Machicho", "Nunca se repitió equipo", "Los únicos 15 que iban a practicar el jueves", "N.A."], answer: "los únicos 15 que iban a practicar el jueves" },
+        { question: "¿Cuál era el equipo titular del Stade en 2003?", choices: ["Todos salvo Machicho", "Nunca se repitió equipo", "Los únicos 15 que iban a practicar el jueves", "N.A."], answer: "Los únicos 15 que iban a practicar el jueves" },
         { question: "¿Quién dijo con toda seguridad: 'tengo más visión de cancha que Bernardo Amarillo'?", choices: ["Quiriquiño", "Malver", "Sam Penedo", "Tito"], answer: "Sam Penedo" },
         { question: "¿Cómo se llaman las Focateens?", choices: ["Focateens", "Micho, Tito, ...", "Mariela, Marilú y Marina", "Silvia, Teresa, Juana"], answer: "Focateens" },
         { question: "¿Quién o quiénes del Stade estuvieron denunciados en un calabozo?", choices: ["Alam y Foca", "Machicho y Quiriquiño", "Juansei y Negro Albina", "Malvar y Matute"], answer: "Malvar y Matute" },
@@ -125,6 +125,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function restartGame() {
         endScreen.classList.add('hidden');
+        gameScreen.classList.add('hidden');
         startScreen.classList.remove('hidden');
         shuffle(questions); // Volver a mezclar las preguntas
         selectedQuestions.splice(0, maxQuestions, ...questions.slice(0, maxQuestions)); // Seleccionar nuevas preguntas
