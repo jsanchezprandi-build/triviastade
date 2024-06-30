@@ -106,7 +106,21 @@ document.addEventListener("DOMContentLoaded", function() {
     function endGame() {
         gameScreen.classList.add('hidden');
         endScreen.classList.remove('hidden');
-        finalScoreElement.textContent = `Tu puntaje final es ${score} de ${maxQuestions}`;
+
+        let finalMessage = `Tu puntaje final es ${score} de ${maxQuestions}. `;
+        if (score <= 3) {
+            finalMessage += "El Tío sigue con dudas. No lo estás ayudando. Sos una vergüenza para la Historia del Stade.";
+        } else if (score === 4) {
+            finalMessage += "Tenés que instruirte más y ayudar mejor al Tío. Todavía no merecés su linaje.";
+        } else if (score === 5) {
+            finalMessage += "El Tío te agradece tu aporte. Te invita a un whisky con él.";
+        } else if (score === 6) {
+            finalMessage += "¡Genial! Sos un digno componente del grupo de seres humanos de mierda.";
+        } else if (score === 7) {
+            finalMessage += "Sos un digno sobrino del Tío Goluá. El Tío nunca va a morir pero si se diera el caso tiene un buen sucesor.";
+        }
+
+        finalScoreElement.textContent = finalMessage;
     }
 
     function restartGame() {
